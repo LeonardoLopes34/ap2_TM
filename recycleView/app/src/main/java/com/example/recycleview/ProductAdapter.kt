@@ -10,56 +10,59 @@ import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.recycleview.databinding.ProductItemBinding
 
 
-class ProductAdapter(private val items: MutableList<Product>, private val goToDetail: (item: Product) -> Unit )
-    : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
+class ProductAdapter(
+    private val items: MutableList<Product>,
+    private val goToDetail: (item: Product) -> Unit,
+    private val removeItem: (product: Product) -> Unit
+) :
+
+    RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductAdapter.ViewHolder {
+
         context = parent.context
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.product_item, parent,false)
-        return ViewHolder(view)
+        val binding = ProductItemBinding.inflate(LayoutInflater.from(context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ProductAdapter.ViewHolder, position: Int) {
-        holder.itemView.rootView.setOnClickListener{
-            goToDetail(items[position])
-        }
-
-        holder.itemView.rootView.setOnLongClickListener {
-            showPopUpMenu(holder.itemView, position)
-            true
-        }
-
-        holder.priceProduct.text = items[position].price.convertToMoney()
-        holder.nameProduct.text = items[position].name
-
-
-       Glide.with(context).load(items[position].urlImage).into(holder.imageProduct)
+        holder.bind(items[position])
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imageProduct: ImageView = view.findViewById(R.id.imgProduct)
-        val nameProduct : TextView = view.findViewById(R.id.productName)
-        val priceProduct : TextView = view.findViewById(R.id.productPrice)
+    inner class ViewHolder(private val binding: ProductItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(product: Product) {
+            binding.product = product
+            binding.root.setOnLongClickListener {
+                showPopUpMenu(it, product)
+                false
+            }
 
-
-
+            binding.root.setOnClickListener {
+                goToDetail(product)
+            }
+        }
     }
-    private fun  showPopUpMenu(view: View, position: Int) {
+
+    private fun showPopUpMenu(view: View, product: Product) {
         PopupMenu(context, view).apply {
             setOnMenuItemClickListener { item ->
                 when (item.itemId) {
                     R.id.deletar -> {
-                        removeItem(items[position])
-                        true
+                        removeItem(product)
+                        notifyDataSetChanged()
+                        false
                     }
+
                     else -> false
                 }
             }
@@ -67,10 +70,5 @@ class ProductAdapter(private val items: MutableList<Product>, private val goToDe
             show()
         }
     }
-
-    fun removeItem(product: Product) {
-        items.remove(product)
-        notifyDataSetChanged()
-    }
-
 }
+

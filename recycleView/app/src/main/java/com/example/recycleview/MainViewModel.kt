@@ -3,7 +3,7 @@ package com.example.recycleview
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
-    fun getProducts () = mutableListOf(
+    val list = mutableListOf(
         Product(
             urlImage = "https://t4.ftcdn.net/jpg/06/93/09/47/240_F_693094707_Eavnydwp6Su2Tx9REPzSZxDmEbElu0Az.jpg",
             name = "Laranja",
@@ -31,4 +31,7 @@ class MainViewModel : ViewModel() {
 
         )
     )
+    fun getProduct() = list
+
+    fun removeProduct(product: Product) = list.remove(product)
 }

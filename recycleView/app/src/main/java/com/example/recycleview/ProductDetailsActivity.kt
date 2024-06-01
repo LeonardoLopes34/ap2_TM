@@ -22,6 +22,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         //glide
 
         //criar a toolbar
+        //transformar em fragment
 
         configureToolbar("Product Detail", false)
 
