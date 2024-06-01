@@ -21,5 +21,9 @@ class ProductDetailsActivity : AppCompatActivity() {
         //recuperar img,price de detailsxml
         //glide
 
+        //criar a toolbar
+
+        configureToolbar("Product Detail", false)
+
     }
 }

@@ -2,10 +2,14 @@ package com.example.recycleview
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
@@ -14,21 +18,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val recycleList = findViewById<RecyclerView>(R.id.listView)
 
-        val listOfProducts = mainViewModel.getProducts()
-        val adapter = ProductAdapter(listOfProducts){
-            goToDetail(it)
-        }
 
-        recycleList.adapter = adapter
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val bottomMenu = findViewById<BottomNavigationView>(R.id.bottom_Menu)
+        val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+
+        setSupportActionBar(toolbar)
+        NavigationUI.setupWithNavController(bottomMenu, navController)
+        configureToolbar("Home", false)
+
 
     }
 
-    private fun goToDetail(item: Product) {
-        Intent(this, ProductDetailsActivity::class.java).apply {
-            putExtra("data", item)
-            startActivity(this)
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nag_graph"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.recycleview.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_createProductFragment"
+            app:destination="@id/createProductFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailsActivity"
+            app:destination="@id/productDetailsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProductFragment"
+        android:name="com.example.recycleview.CreateProductFragment"
+        android:label="fragment_create_product"
+        tools:layout="@layout/fragment_create_product" >
+        <action
+            android:id="@+id/action_createProductFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/productDetailsActivity"
+        android:name="com.example.recycleview.ProductDetailsActivity"
+        android:label="activity_product_details_acticity"
+        tools:layout="@layout/activity_product_details_acticity" />
+</navigation>

@@ -5,12 +5,37 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceDim"
     tools:context=".MainActivity">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listView"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:background="?attr/colorTertiary"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="65dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nag_graph" />
+    
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_Menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

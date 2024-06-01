@@ -63,7 +63,7 @@ class ProductAdapter(private val items: MutableList<Product>, private val goToDe
                     else -> false
                 }
             }
-            inflate(R.menu.MenuPopUp)
+            inflate(R.menu.menu_pop_up)
             show()
         }
     }
