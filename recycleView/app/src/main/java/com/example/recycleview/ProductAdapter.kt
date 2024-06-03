@@ -46,7 +46,6 @@ class ProductAdapter(
                 showPopUpMenu(it, product)
                 false
             }
-
             binding.root.setOnClickListener {
                 goToDetail(product)
             }
