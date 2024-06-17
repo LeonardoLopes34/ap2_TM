@@ -1,15 +1,13 @@
-package com.example.recycleview
+package com.example.recycleview.presentation.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.PopupMenu
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.example.recycleview.R
+import com.example.recycleview.data.Product
 import com.example.recycleview.databinding.ProductItemBinding
 
 
@@ -23,14 +21,14 @@ class ProductAdapter(
 
     private lateinit var context: Context
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         context = parent.context
         val binding = ProductItemBinding.inflate(LayoutInflater.from(context), parent, false)
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ProductAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(items[position])
     }
 

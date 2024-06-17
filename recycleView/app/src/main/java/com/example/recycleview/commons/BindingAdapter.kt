@@ -1,4 +1,4 @@
-package com.example.recycleview
+package com.example.recycleview.commons
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

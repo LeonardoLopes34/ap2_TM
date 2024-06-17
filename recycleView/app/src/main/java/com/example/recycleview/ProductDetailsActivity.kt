@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
+import com.example.recycleview.data.Product
 import com.example.recycleview.databinding.ActivityProductDetailsActicityBinding
 
 class ProductDetailsActivity : AppCompatActivity() {

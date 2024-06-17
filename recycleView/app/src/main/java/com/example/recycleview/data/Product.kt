@@ -1,4 +1,4 @@
-package com.example.recycleview
+package com.example.recycleview.data
 
 import java.io.Serializable
 

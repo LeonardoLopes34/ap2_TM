@@ -5,7 +5,7 @@
     <data>
         <variable
             name="product"
-            type="com.example.recycleview.Product" />
+            type="com.example.recycleview.data.Product" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -47,24 +47,29 @@
             android:id="@+id/productName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="250dp"
-            android:textSize="20sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/productDescription"
             app:layout_constraintEnd_toEndOf="@id/viewProductDetail"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="@id/viewProductDetail"
-            app:layout_constraintTop_toTopOf="@+id/viewProductDetail"
+            app:layout_constraintTop_toBottomOf="@+id/productImage"
             tools:text="apkstgkaó" />
 
         <TextView
             android:id="@+id/productDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="315dp"
-            android:textSize="15sp"
             android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/viewProductDetail"
             app:layout_constraintEnd_toEndOf="@id/viewProductDetail"
             app:layout_constraintStart_toStartOf="@id/viewProductDetail"
-            app:layout_constraintTop_toTopOf="@+id/viewProductDetail"
+            app:layout_constraintTop_toBottomOf="@+id/productName"
             tools:text="tastgfasdgftasfqwefg descricao top" />
 
 

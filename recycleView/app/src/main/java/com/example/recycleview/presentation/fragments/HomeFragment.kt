@@ -1,4 +1,4 @@
-package com.example.recycleview
+package com.example.recycleview.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,11 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
+import com.example.recycleview.presentation.viewmodels.MainViewModel
+import com.example.recycleview.R
+import com.example.recycleview.data.Product
 import com.example.recycleview.databinding.FragmentHomeBinding
+import com.example.recycleview.presentation.adapters.ProductAdapter
 
 
 class HomeFragment : Fragment() {

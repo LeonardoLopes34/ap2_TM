@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.recycleview.HomeFragment"
+        android:name="com.example.recycleview.presentation.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/createProductFragment"
-        android:name="com.example.recycleview.CreateProductFragment"
+        android:name="com.example.recycleview.presentation.fragments.CreateProductFragment"
         android:label="fragment_create_product"
         tools:layout="@layout/fragment_create_product" >
         <action

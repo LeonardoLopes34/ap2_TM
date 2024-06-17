@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.example.recycleview.databinding.ActivityMainBinding
+import com.example.recycleview.presentation.viewmodels.MainViewModel
 
 
 class MainActivity : AppCompatActivity() {
