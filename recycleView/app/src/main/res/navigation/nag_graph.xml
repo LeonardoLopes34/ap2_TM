@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.recycleview.presentation.fragments.HomeFragment"
-        android:label="fragment_home"
+        android:label="Inicio"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_createProductFragment"
@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/createProductFragment"
         android:name="com.example.recycleview.presentation.fragments.CreateProductFragment"
-        android:label="fragment_create_product"
+        android:label="Adicionar Produto"
         tools:layout="@layout/fragment_create_product" >
         <action
             android:id="@+id/action_createProductFragment_to_homeFragment2"
@@ -30,6 +30,6 @@
     <activity
         android:id="@+id/productDetailsActivity"
         android:name="com.example.recycleview.ProductDetailsActivity"
-        android:label="activity_product_details_acticity"
+        android:label="Detalhes do Produto"
         tools:layout="@layout/activity_product_details_acticity" />
 </navigation>

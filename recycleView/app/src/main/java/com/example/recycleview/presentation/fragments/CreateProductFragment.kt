@@ -6,16 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.example.recycleview.R
-import com.example.recycleview.configureToolbar
+import com.example.recycleview.commons.utils.configureToolbar
+import com.example.recycleview.databinding.FragmentCreateProductBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CreateProductFragment : Fragment() {
+    private lateinit var binding: FragmentCreateProductBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_product, container, false)
+    ): View {
+        binding = FragmentCreateProductBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

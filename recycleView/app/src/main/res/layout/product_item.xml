@@ -5,7 +5,7 @@
     <data>
         <variable
             name="product"
-            type="com.example.recycleview.data.Product" />
+            type="com.example.recycleview.data.models.Product" />
     </data>
 
     <androidx.cardview.widget.CardView

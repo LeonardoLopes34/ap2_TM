@@ -5,7 +5,7 @@
     <data>
         <variable
             name="product"
-            type="com.example.recycleview.data.Product" />
+            type="com.example.recycleview.data.models.Product" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -53,6 +53,7 @@
             android:layout_marginBottom="16dp"
             android:textColor="@color/black"
             android:textSize="20sp"
+            android:text="@{product.name}"
             app:layout_constraintBottom_toTopOf="@+id/productDescription"
             app:layout_constraintEnd_toEndOf="@id/viewProductDetail"
             app:layout_constraintHorizontal_bias="0.498"
@@ -66,6 +67,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="15sp"
+            android:text="@{product.description}"
             app:layout_constraintBottom_toBottomOf="@+id/viewProductDetail"
             app:layout_constraintEnd_toEndOf="@id/viewProductDetail"
             app:layout_constraintStart_toStartOf="@id/viewProductDetail"

@@ -1,4 +1,4 @@
-package com.example.recycleview
+package com.example.recycleview.commons.utils
 
 import androidx.appcompat.app.AppCompatActivity
 

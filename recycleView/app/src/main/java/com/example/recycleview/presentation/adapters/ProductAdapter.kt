@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recycleview.R
-import com.example.recycleview.data.Product
+import com.example.recycleview.data.models.Product
 import com.example.recycleview.databinding.ProductItemBinding
 
 

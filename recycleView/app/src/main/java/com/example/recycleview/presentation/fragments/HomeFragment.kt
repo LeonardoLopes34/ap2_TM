@@ -10,11 +10,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.recycleview.presentation.viewmodels.MainViewModel
 import com.example.recycleview.R
-import com.example.recycleview.data.Product
+import com.example.recycleview.data.models.Product
 import com.example.recycleview.databinding.FragmentHomeBinding
 import com.example.recycleview.presentation.adapters.ProductAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var productAdapter: ProductAdapter
     private lateinit var mainViewModel: MainViewModel
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
 
 
         val recycler = binding.recyclerView
-        val productAdapter =
+         productAdapter =
             ProductAdapter(mainViewModel.getProduct(), goToDetail = { product: Product ->
                 val bundle = bundleOf("data" to product)
                 findNavController().navigate(

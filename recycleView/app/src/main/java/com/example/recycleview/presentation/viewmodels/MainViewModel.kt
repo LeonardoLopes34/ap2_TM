@@ -1,8 +1,10 @@
 package com.example.recycleview.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
-import com.example.recycleview.data.Product
+import com.example.recycleview.data.models.Product
+import dagger.hilt.android.lifecycle.HiltViewModel
 
+@HiltViewModel
 class MainViewModel : ViewModel() {
     val list = mutableListOf(
         Product(
