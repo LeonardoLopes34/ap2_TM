@@ -1,5 +1,6 @@
 package com.example.recycleview.data.models
 
+import com.example.recycleview.data.dataBase.ProductEntity
 import java.io.Serializable
 
 data class Product(
@@ -9,3 +10,4 @@ data class Product(
     val description: String
 ) : Serializable
 
+fun Product.toEntity() = ProductEntity(name = this.name, price = this.price, urlImage = this.urlImage, description = this.description)

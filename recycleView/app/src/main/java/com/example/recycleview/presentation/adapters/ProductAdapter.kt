@@ -12,14 +12,24 @@ import com.example.recycleview.databinding.ProductItemBinding
 
 
 class ProductAdapter(
-    private val items: MutableList<Product>,
+
     private val goToDetail: (item: Product) -> Unit,
     private val removeItem: (product: Product) -> Unit
 ) :
-
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
+    private var listOfProducts = emptyList<Product>()
     private lateinit var context: Context
+
+    fun setUpListOfProducts(products: List<Product>) {
+        listOfProducts = products
+        notifyDataSetChanged()
+
+    }
+
+    fun notifyChange(){
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -29,11 +39,11 @@ class ProductAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(listOfProducts[position])
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return listOfProducts.size
     }
 
     inner class ViewHolder(private val binding: ProductItemBinding) :

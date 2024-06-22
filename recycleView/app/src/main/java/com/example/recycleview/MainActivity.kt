@@ -11,7 +11,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import com.example.recycleview.commons.utils.configureToolbar
 import com.example.recycleview.databinding.ActivityMainBinding
-import com.example.recycleview.presentation.viewmodels.MainViewModel
+import com.example.recycleview.presentation.viewmodels.ProductViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel: ProductViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
